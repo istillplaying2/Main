@@ -752,3 +752,4 @@ function SamuraiLib:Window(text, description, vis)
 	end
 	return InsideLib
 end
+return SamuraiLib
