@@ -316,7 +316,6 @@ function SamuraiLib:Window(text, description, vis)
 
 			UICorner_4.CornerRadius = UDim.new(0, 5)
 			UICorner_4.Parent = TextButton
-		end
 
 		-- Label
 
@@ -378,7 +377,6 @@ function SamuraiLib:Window(text, description, vis)
 
 			UICorner_9.CornerRadius = UDim.new(0, 5)
 			UICorner_9.Parent = TextBox
-		end
 
 		--1ButtonNotification
 
@@ -468,7 +466,6 @@ function SamuraiLib:Window(text, description, vis)
 				script.Parent.Visible = false
 			end
 			coroutine.wrap(OPPSW_fake_script)()
-		end
 
 		-- Notification
 
@@ -613,7 +610,6 @@ function SamuraiLib:Window(text, description, vis)
 
 			end
 			coroutine.wrap(VTCJ_fake_script)()
-		end
 
 		-- 2ButtonNotification
 
@@ -748,7 +744,11 @@ function SamuraiLib:Window(text, description, vis)
 			end
 			coroutine.wrap(JGHD_fake_script)()
 
+		            end
+		        end
+		    end
 		end
+	    end
 	end
 	return InsideLib
 end
