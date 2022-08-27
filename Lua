@@ -1,8 +1,8 @@
 -- Window
 
-local SamuraiLib = {}
+local Library = {}
 
-function SamuraiLib:Window(text, description, vis)
+function Library:Window(text, description, vis)
 	local suckmysausage = Instance.new("ScreenGui")
 	local yousuckmysausage = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -245,9 +245,9 @@ function SamuraiLib:Window(text, description, vis)
 	end
 	coroutine.wrap(XGUA_fake_script)()
 
-	local InsideLib = {}
+	local Win = {}
 
-	function InsideLib:Tab(name)
+	function Win:Tab(name, vis)
 
 		local Tab = Instance.new("ScrollingFrame")
 		local UIListLayout = Instance.new("UIListLayout")
@@ -266,6 +266,7 @@ function SamuraiLib:Window(text, description, vis)
 		Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
 		Tab.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
 		Tab.ScrollBarThickness = 3
+		Tab.Visible = vis
 
 		UIListLayout.Parent = Tab
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -294,12 +295,14 @@ function SamuraiLib:Window(text, description, vis)
 
 		UICorner_22.CornerRadius = UDim.new(0, 2)
 		UICorner_22.Parent = left
-		function InsideLib:Button(text, callback)
+		
+		local New = {}
+		
+		function New:Button(text, callback)
 			local TextButton = Instance.new("TextButton")
 			local UICorner_4 = Instance.new("UICorner")
 
 			local callback = callback or function() end
-
 
 			TextButton.Parent = Tab
 			TextButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
@@ -319,7 +322,7 @@ function SamuraiLib:Window(text, description, vis)
 
 		-- Label
 
-		function InsideLib:Label(text)
+		function New:Label(text)
 			local TextLabel = Instance.new("TextLabel")
 			local UICorner_6 = Instance.new("UICorner")
 
@@ -334,7 +337,6 @@ function SamuraiLib:Window(text, description, vis)
 
 			UICorner_6.CornerRadius = UDim.new(0, 5)
 			UICorner_6.Parent = TextLabel
-		end
 
 		-- Textbox
 
@@ -380,7 +382,7 @@ function SamuraiLib:Window(text, description, vis)
 
 		--1ButtonNotification
 
-		function InsideLib:OneButtonNotification(Title, Things1, Things2, name, Duration)
+		function New:OneButtonNotification(Title, Things1, Things2, name, Duration)
 			local _1ButtonNotification = Instance.new("Frame")
 			local UICorner_27 = Instance.new("UICorner")
 			local ImageLabel_3 = Instance.new("ImageLabel")
@@ -469,7 +471,7 @@ function SamuraiLib:Window(text, description, vis)
 
 		-- Notification
 
-		function InsideLib:StartNotification(name, yourstatus, Duration)
+		function New:StartNotification(name, yourstatus, Duration)
 
 			local Notification_2 = Instance.new("Frame")
 			local UICorner_32 = Instance.new("UICorner")
@@ -613,7 +615,7 @@ function SamuraiLib:Window(text, description, vis)
 
 		-- 2ButtonNotification
 
-		function InsideLib:TwoButtonNotification(Title, Things1, Things2, name, name2, Duration, Vis, callback)
+		function New:TwoButtonNotification(Title, Things1, Things2, name, name2, Duration, Vis, callback)
 			
 			local callback = callback or function() end
 			
@@ -743,13 +745,14 @@ function SamuraiLib:Window(text, description, vis)
 				script.Parent.Visible = false
 			end
 			coroutine.wrap(JGHD_fake_script)()
-
+			        end
 		            end
 		        end
 		    end
 		end
 	    end
+	    return New
 	end
-	return InsideLib
+	return Win
 end
-return SamuraiLib
+return Library
